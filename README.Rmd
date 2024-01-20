@@ -1,15 +1,6 @@
 ---
 title: "README"
-output: 
-  html_document:
-    theme:
-      bg: "#FFFFFF" #Regeneron White
-      fg: "#065BAA" #Regeneron Blue
-      primary: "#D50056" #Regeneron Rubine
-      secondary: "#9BD3DD" #Regeneron Aquamarine
-      base_font: "Roboto Regular"
-      heading_font: "Roboto Condensed"
-      font_scale: 1.3
+
 ---
 ## Setup
 
