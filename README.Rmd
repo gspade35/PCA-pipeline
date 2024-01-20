@@ -1,0 +1,62 @@
+---
+title: "README"
+output: 
+  html_document:
+    theme:
+      bg: "#FFFFFF" #Regeneron White
+      fg: "#065BAA" #Regeneron Blue
+      primary: "#D50056" #Regeneron Rubine
+      secondary: "#9BD3DD" #Regeneron Aquamarine
+      base_font: "Roboto Regular"
+      heading_font: "Roboto Condensed"
+      font_scale: 1.3
+---
+## Setup
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+source("./R/pca_pipeline.R")
+```
+
+## Introduction
+
+PCA is a dimensionality reduction technique widely used in machine learning and data visualization. It operates by calculating the eigenvectors and eigenvalues of the covariance or correlation matrix. These eigenvectors, also known as principal components, define the directions in the new feature space that maximize variance. The eigenvalues, on the other hand, quantify the magnitude of this variance along each direction. In essence, the eigenvalues explain the variance of the data along the new feature axes, which are the principal components.
+
+The eigenvectors of the covariance matrix correspond to the columns in the projection matrix and are arranged in descending order of their corresponding eigenvalues. These eigenvalues represent the amount of variance explained by each eigenvector. The data matrix is then multiplied by this projection matrix to project the data onto the feature space defined by the principal components. These principal components are linear combinations of the variables in the data matrix and form an orthogonal basis (in statistics, "orthogonal" implies "uncorrelated") for this new feature space. The outcome represents the coordinates of the original data points in this new feature space for each principal component.
+
+The first principal component is the direction in the data with the most significant variance. The second principal component, orthogonal to the first, has the second largest variance. This pattern continues for as many principal components as there are dimensions in the original data.
+
+So PCA can be utilized for noise reduction (by dropping columns in the score matrix that explain a small amount of variance), feature extraction (by referencing which features )
+
+## Data Preparation
+
+```{r}
+# Create sample dataframe
+set.seed(123) # for reproducibility
+sample_df <- data.frame(
+  USUBJID = rep(sprintf("%03d", 1:100), each = 2), # 100 subjects, each repeated twice
+  AGE = rep(rnorm(100, 50, 10), each = 2), # age from a normal distribution, each repeated twice
+  SEX = rep(sample(c("M", "F"), 100, replace = TRUE), each = 2), # sex randomly assigned, each repeated twice
+  TRT01P = rep(sample(c("Drug A", "Drug B"), 100, replace = TRUE), each = 2), # treatment randomly assigned, each repeated twice
+  LBTESTCD = rep(c("AA","Ba"), 100), # two LBTESTCD values for each subject
+  AVAL = rnorm(200, 5, 1) # two AVAL measures for each subject
+)
+sample_df
+```
+
+```{r}
+plot1 <- pca_pipeline(sample_df,id="USUBJID",group="TRT01P",scale=T)
+plot1
+```
+
+```{r}
+plot2 <- pca_pipeline(sample_df,id="USUBJID",group="SEX",scale=T)
+plot2
+```
+
+```{r}
+
+```
+
+
