@@ -1,14 +1,11 @@
 ---
 title: "README"
-<<<<<<< Updated upstream
-
-=======
 output: github_document
 theme:
   base_font: "Roboto Regular"
   heading_font: "Roboto Condensed"
   font_scale: 1.3
->>>>>>> Stashed changes
+  
 ---
 ## Setup
 
