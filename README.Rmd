@@ -41,7 +41,7 @@ sample_df <- data.frame(
   LBTESTCD = rep(c("AA","Ba"), 100), # two LBTESTCD values for each subject
   AVAL = rnorm(200, 5, 1) # two AVAL measures for each subject
 )
-sample_df
+head(sample_df)
 ```
 
 ```{r}

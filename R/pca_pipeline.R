@@ -1,27 +1,3 @@
-###
-##
-#
-
-# log_transform <- possibly(function(x) {
-#   if (any(x <= 0, na.rm = TRUE)) {
-#     warning("1 was added to all numeric values before log10 transformation.")
-#     return(ifelse(is.na(x), NA, log10(x + 1)))
-#   } else {
-#     return(ifelse(is.na(x), NA, log10(x)))
-#   }
-# }, otherwise = NA_real_)
-
-# complete_data_info <- function(df) {
-#   complete_data <- df[complete.cases(df), ]
-#   removed_rows <- df[!complete.cases(df), ]
-#   
-#   if (nrow(removed_rows) > 0) {
-#     warning(paste(nrow(removed_rows), "rows were removed due to missing values. Summary of removed rows:"))
-#     print(removed_rows)
-#   }
-#   return(complete_data)
-# }
-
 pca_df <- function(df,id_col="SUBJID",group,names_col="LBTESTCD",values_col="AVAL"){
   cols <- c(id_col,group,names_col,values_col)
   dfpca <- df %>%
