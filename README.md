@@ -62,61 +62,6 @@ head(sample_df)
 
 ``` r
 plot1 <- pca_pipeline(sample_df,id="USUBJID",group="TRT01P",scale=T)
-```
-
-    ## Warning: Using an external vector in selections was deprecated in tidyselect 1.1.0.
-    ## ℹ Please use `all_of()` or `any_of()` instead.
-    ##   # Was:
-    ##   data %>% select(names_col)
-    ## 
-    ##   # Now:
-    ##   data %>% select(all_of(names_col))
-    ## 
-    ## See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
-    ## This warning is displayed once every 8 hours.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
-
-    ## Warning: Using an external vector in selections was deprecated in tidyselect 1.1.0.
-    ## ℹ Please use `all_of()` or `any_of()` instead.
-    ##   # Was:
-    ##   data %>% select(values_col)
-    ## 
-    ##   # Now:
-    ##   data %>% select(all_of(values_col))
-    ## 
-    ## See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
-    ## This warning is displayed once every 8 hours.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
-
-    ## Warning: Using an external vector in selections was deprecated in tidyselect 1.1.0.
-    ## ℹ Please use `all_of()` or `any_of()` instead.
-    ##   # Was:
-    ##   data %>% select(id)
-    ## 
-    ##   # Now:
-    ##   data %>% select(all_of(id))
-    ## 
-    ## See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
-    ## This warning is displayed once every 8 hours.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
-
-    ## Warning: Using an external vector in selections was deprecated in tidyselect 1.1.0.
-    ## ℹ Please use `all_of()` or `any_of()` instead.
-    ##   # Was:
-    ##   data %>% select(group)
-    ## 
-    ##   # Now:
-    ##   data %>% select(all_of(group))
-    ## 
-    ## See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
-    ## This warning is displayed once every 8 hours.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
-
-``` r
 plot1
 ```
 
